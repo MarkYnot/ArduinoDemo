@@ -15,11 +15,11 @@ pinMode(ledPin, OUTPUT);  // 设置ledPin为输出模式
 
 ## 3. loop() 函数：
 > - 使用analogRead()函数从**sensorPin** 读取传感器值，并存储在**sensorValue**中。
-> - 通过**Serial.println(sensorValue);**将传感器的值发送到串行监视器，这样用户就可以实时查看传感器的读数。
+> - 通过```cSerial.println(sensorValue);```将传感器的值发送到串行监视器，这样用户就可以实时查看传感器的读数。
 > - 根据传感器值决定LED的状态：
->    - 如果**sensorValue**大于500，则通过**digitalWrite(ledPin, HIGH);**点亮LED。
->    - 否则，通过**digitalWrite(ledPin, LOW);**关闭LED。
-> **delay(200);** 会让程序暂停200毫秒，然后再次循环。   
+>    - 如果**sensorValue**大于500，则通过```digitalWrite(ledPin, HIGH);```点亮LED。
+>    - 否则，通过```digitalWrite(ledPin, LOW);```关闭LED。
+> ```c delay(200)``` 会让程序暂停200毫秒，然后再次循环。   
 
 ## 4. 为什么需要delay 200毫秒
 > - **稳定性和去抖动** : 当从按钮或某些传感器（如触摸传感器）读取数据时，可能会遇到短暂的噪音或不稳定的信号。延迟可以帮助在短时间内稳定读数，避免错误地多次触发事件。
